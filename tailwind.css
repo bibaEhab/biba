@@ -1,0 +1,169 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --habibauiux-framer-website-figtree-medium-font-family: "Figtree", Helvetica;
+  --habibauiux-framer-website-figtree-medium-font-size: 16px;
+  --habibauiux-framer-website-figtree-medium-font-style: normal;
+  --habibauiux-framer-website-figtree-medium-font-weight: 500;
+  --habibauiux-framer-website-figtree-medium-letter-spacing: -0.3199999928474426px;
+  --habibauiux-framer-website-figtree-medium-line-height: 22.399999618530273px;
+  --habibauiux-framer-website-inter-bold-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-inter-bold-font-size: 58px;
+  --habibauiux-framer-website-inter-bold-font-style: normal;
+  --habibauiux-framer-website-inter-bold-font-weight: 700;
+  --habibauiux-framer-website-inter-bold-letter-spacing: 0px;
+  --habibauiux-framer-website-inter-bold-line-height: 69.5999984741211px;
+  --habibauiux-framer-website-inter-medium-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-inter-medium-font-size: 16px;
+  --habibauiux-framer-website-inter-medium-font-style: normal;
+  --habibauiux-framer-website-inter-medium-font-weight: 500;
+  --habibauiux-framer-website-inter-medium-letter-spacing: 0px;
+  --habibauiux-framer-website-inter-medium-line-height: 16px;
+  --habibauiux-framer-website-inter-regular-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-inter-regular-font-size: 24px;
+  --habibauiux-framer-website-inter-regular-font-style: normal;
+  --habibauiux-framer-website-inter-regular-font-weight: 400;
+  --habibauiux-framer-website-inter-regular-letter-spacing: 0px;
+  --habibauiux-framer-website-inter-regular-line-height: 28.799999237060547px;
+  --habibauiux-framer-website-semantic-heading-1-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-semantic-heading-1-font-size: 47.25px;
+  --habibauiux-framer-website-semantic-heading-1-font-style: normal;
+  --habibauiux-framer-website-semantic-heading-1-font-weight: 500;
+  --habibauiux-framer-website-semantic-heading-1-letter-spacing: -0.9599999785423279px;
+  --habibauiux-framer-website-semantic-heading-1-line-height: 52.79999923706055px;
+  --habibauiux-framer-website-semantic-heading-2-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-semantic-heading-2-font-size: 53.92578125px;
+  --habibauiux-framer-website-semantic-heading-2-font-style: normal;
+  --habibauiux-framer-website-semantic-heading-2-font-weight: 500;
+  --habibauiux-framer-website-semantic-heading-2-letter-spacing: -2.200000047683716px;
+  --habibauiux-framer-website-semantic-heading-2-line-height: 60.5px;
+  --habibauiux-framer-website-semantic-link-font-family: "Inter", Helvetica;
+  --habibauiux-framer-website-semantic-link-font-size: 16px;
+  --habibauiux-framer-website-semantic-link-font-style: normal;
+  --habibauiux-framer-website-semantic-link-font-weight: 500;
+  --habibauiux-framer-website-semantic-link-letter-spacing: 0px;
+  --habibauiux-framer-website-semantic-link-line-height: 19.200000762939453px;
+  --habibauiuxframerwebsiteathens-gray: rgba(245, 245, 248, 1);
+  --habibauiuxframerwebsiteblack: rgba(0, 0, 0, 1);
+  --habibauiuxframerwebsitebunting: rgba(13, 23, 51, 1);
+  --habibauiuxframerwebsitecod-gray-40: rgba(13, 13, 13, 0.4);
+  --habibauiuxframerwebsitecod-gray-50: rgba(13, 13, 13, 0.5);
+  --habibauiuxframerwebsitecod-gray-80: rgba(13, 13, 13, 0.8);
+  --habibauiuxframerwebsitedodger-blue: rgba(61, 113, 255, 1);
+  --habibauiuxframerwebsitedusty-gray: rgba(153, 153, 153, 1);
+  --habibauiuxframerwebsitefuchsia-blue: rgba(129, 74, 200, 1);
+  --habibauiuxframerwebsitemelrose: rgba(165, 145, 255, 1);
+  --habibauiuxframerwebsitemine-shaft: rgba(41, 41, 41, 1);
+  --habibauiuxframerwebsitepampas: rgba(252, 252, 250, 1);
+  --habibauiuxframerwebsitepurple-heart: rgba(134, 31, 219, 1);
+  --habibauiuxframerwebsitesilver: rgba(204, 204, 204, 1);
+  --habibauiuxframerwebsitewhite: rgba(255, 255, 255, 1);
+  --habibauiuxframerwebsitewhite-10: rgba(255, 255, 255, 0.1);
+  --habibauiuxframerwebsitewhite-4: rgba(255, 255, 255, 0.04);
+  --habibauiuxframerwebsitewhite-40: rgba(255, 255, 255, 0.4);
+  --habibauiuxframerwebsitewhite-70: rgba(255, 255, 255, 0.7);
+  --habibauiuxframerwebsitewhite-8: rgba(255, 255, 255, 0.08);
+  --habibauiuxframerwebsitewhite-black: rgba(255, 255, 255, 1);
+  --text-sm-regular-font-family: "IBM Plex Sans Arabic", Helvetica;
+  --text-sm-regular-font-size: 14px;
+  --text-sm-regular-font-style: normal;
+  --text-sm-regular-font-weight: 400;
+  --text-sm-regular-letter-spacing: 0px;
+  --text-sm-regular-line-height: 20px;
+  --text-sm-semibold-font-family: "IBM Plex Sans Arabic", Helvetica;
+  --text-sm-semibold-font-size: 14px;
+  --text-sm-semibold-font-style: normal;
+  --text-sm-semibold-font-weight: 600;
+  --text-sm-semibold-letter-spacing: 0px;
+  --text-sm-semibold-line-height: 20px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
