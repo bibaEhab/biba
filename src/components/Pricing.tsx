@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 import price from "../pics/pricing elion.png";
 import check from "../pics/pricecheck.svg";
+import star from "../pics/star.svg";
 
 
 const Pricing = (): JSX.Element => {
@@ -28,18 +29,24 @@ const Pricing = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full items-center justify-center p-20 relative bg-habibauiuxframerwebsiteblack">
-      <div className="flex flex-col max-w-[1200px] w-full items-center justify-center gap-[72px] relative">
+    <section className="flex flex-col w-fit items-center justify-center p-20 relative bg-habibauiuxframerwebsiteblack">
+      <div className="flex flex-col max-w-[1200px] w-fit items-center justify-center gap-[72px] relative">
         <section className="flex flex-col items-center justify-center gap-4 w-full max-w-[1200px] mx-auto">
           <div className="flex flex-col items-start">
-            <Badge
-              className="bg-habibauiuxframerwebsitecod-gray-40 text-white rounded-[50px] px-3 py-1.5 shadow-[0px_0px_0px_1px_#ffffff1a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
-              variant="outline"
-            >
-              <span className="font-medium text-[13.3px] tracking-[-0.28px] leading-[21px]">
-                Pricing
-              </span>
-            </Badge>
+          <Badge className="inline-flex items-center justify-center gap-[5px] pt-[7px] pb-2 px-3 relative bg-habibauiuxframerwebsitecod-gray-80 rounded-md overflow-hidden border border-solid border-[#222222]">
+            <div className="flex flex-col w-[15px] h-[15px] items-start justify-center relative">
+              <div className="relative self-stretch w-full h-[15px]">
+                <img
+                  className="absolute w-3.5 h-3.5 top-0 left-px"
+                  alt="star"
+                  src={star}
+                />
+              </div>
+            </div>
+            <span className="[font-family:'Figtree',Helvetica] font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
+              PRICING
+            </span>
+          </Badge>
           </div>
 
           <div className="flex justify-center items-center gap-3.5 w-full px-5 py-px">
@@ -61,15 +68,15 @@ const Pricing = (): JSX.Element => {
         </section>
 
         <img
-          className="absolute w-28 h-28 top-[159px] left-[504px] object-cover"
+          className="absolute w-28 h-28 top-[159px] left-[546px] object-cover"
           alt="price"
           src={price}
         />
 
-        <div className="flex flex-row items-center justify-center gap-[24px] relative self-stretch w-full">
-          <div className="flex flex-wrap items-center justify-center gap-[24px] relative">
+        <div className="flex flex-row items-center justify-center gap-[24px] relative w-fit">
+          <div className="flex flex-wrap items-center justify-end gap-[24px] relative w-fit">
             {/* Custom Plan */}
-            <Card className="flex flex-col w-full max-w-[450px] h-auto py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
+            <Card className="flex flex-col w-full w-[450px] min-h-[633px] py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
               <CardContent className="flex flex-col items-start justify-center gap-10 p-0 w-full">
                 <div className="flex-col items-start justify-center gap-4 flex relative self-stretch w-full">
                   <div className="flex flex-col items-start relative self-stretch w-full">
@@ -99,7 +106,7 @@ const Pricing = (): JSX.Element => {
                   </div>
 
                   <div className="flex flex-col items-start relative self-stretch w-full">
-                    <p className="relative self-stretch mt-[-1.00px] [font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsitewhite-70 text-[17px] tracking-[-0.36px] leading-[27px]">
+                    <p className="relative self-stretch mt-[-1.00px] min-h-[54px] [font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsitewhite-70 text-[17px] tracking-[-0.36px] leading-[27px]">
                       Need a tailored offer? Let&#39;s talk.
                     </p>
                   </div>
@@ -139,8 +146,8 @@ const Pricing = (): JSX.Element => {
             </Card>
 
             {/* Project Based Plan */}
-            <Card className="flex flex-col w-full max-w-[450px] h-auto py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
-              <CardHeader className="flex flex-col items-start gap-4 px-8 pt-12 pb-0">
+            <Card className="flex flex-col w-full w-[450px] min-h-[633px] py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
+              <CardHeader className="flex flex-col items-start gap-4 px-0 pt-0 pb-0">
                 <div className="flex flex-col items-start gap-4 w-full">
                   <div className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsitemelrose text-[20.6px] tracking-[-0.44px] leading-[33px]">
                     Project Based
@@ -166,15 +173,15 @@ const Pricing = (): JSX.Element => {
                 </div>
               </CardHeader>
 
-              <CardContent className="px-8 py-10">
-                <Button className="w-full py-[22px] px-12 bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)] hover:bg-habibauiuxframerwebsitecod-gray-80">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6">
+              <CardContent className="px-0 py-10">
+              <Button className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+                  <span className="font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                     Get Started
                   </span>
                 </Button>
               </CardContent>
 
-              <CardFooter className="flex flex-col items-start gap-4 px-8 pb-12">
+              <CardFooter className="flex flex-col items-start gap-4 px-0 pb-12">
                 <div className="[font-family:'Inter',Helvetica] font-medium text-white text-[15.2px] tracking-[-0.32px] leading-[22.4px]">
                   Including:
                 </div>
@@ -199,9 +206,9 @@ const Pricing = (): JSX.Element => {
             </Card>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-[42px] relative">
+          <div className="flex flex-wrap items-center justify-start gap-[24px] relative w-fit">
             {/* Part Time Plan */}
-            <Card className="flex flex-col w-full max-w-[450px] h-auto py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
+            <Card className="flex flex-col w-full w-[450px] min-h-[633px] py-12 px-8 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border border-[#ffffff1a]">
               <CardContent className="flex flex-col items-start justify-center gap-10 p-0 w-full">
                 <div className="flex flex-col items-start gap-4 w-full">
                   <div className="w-full">
@@ -267,7 +274,7 @@ const Pricing = (): JSX.Element => {
             </Card>
 
             {/* Full Time Plan */}
-            <Card className="flex flex-col w-full max-w-[450px] px-8 py-12 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border-[#ffffff1a] border border-solid">
+            <Card className="flex flex-col w-full w-[450px] min-h-[633px] px-8 py-12 relative bg-habibauiuxframerwebsitewhite-4 rounded-[32px] overflow-hidden shadow-[0px_4px_4px_1px_#8a38f533] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] border-[#ffffff1a] border border-solid">
               <CardContent className="flex flex-col items-start justify-center gap-10 p-0 w-full">
                 <div className="flex-col items-start justify-center gap-4 flex relative self-stretch w-full">
                   <div className="flex flex-col items-start relative self-stretch w-full">
@@ -297,8 +304,7 @@ const Pricing = (): JSX.Element => {
 
                   <div className="flex flex-col items-start relative self-stretch w-full">
                     <p className="relative self-stretch mt-[-1.00px] font-medium text-habibauiuxframerwebsitewhite-70 text-[16.9px] tracking-[-0.36px] leading-[27px]">
-                      Best for businesses or dedicated individuals ready to elevate
-                      their productivity through personalized, full-time support.
+                    Ideal for businesses or individuals seeking full-time, personalized productivity support.
                     </p>
                   </div>
                 </div>

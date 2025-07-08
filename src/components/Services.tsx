@@ -1,7 +1,6 @@
 import React from "react";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
 import soon from "../pics/soon elion.png";
 import proud from "../pics/proud elion.png";
 import star from "../pics/star.svg";
@@ -138,20 +137,11 @@ const Services = (): JSX.Element => {
               </h3>
             </div>
           </div>
-
-          <Button
-            variant="outline"
-            className="h-[42px] px-5 py-0 bg-[#ffffffe6] text-black rounded-[50px] hover:bg-[#ffffffcc]"
-          >
-            <span className="font-['Inter',Helvetica] font-medium text-xl leading-6">
-              Explore
-            </span>
-          </Button>
         </CardContent>
       </Card>
 
       <img
-        className="absolute w-28 h-28 top-[291px] left-[337px] object-cover"
+        className="absolute w-28 h-28 top-[417px] left-[64px] object-cover"
         alt="proud"
         src={proud}
       />

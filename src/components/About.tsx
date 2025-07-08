@@ -36,7 +36,7 @@ const About = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center justify-center gap-[98px] p-20 relative w-full">
       <img
-        className="absolute w-28 h-28 top-[409px] left-[904px] object-cover"
+        className="absolute w-28 h-28 top-[388px] left-[490px] object-cover"
         alt="shy"
         src={shy}
       />
@@ -85,7 +85,7 @@ const About = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-start justify-center gap-5 w-full max-w-[950px]">
+      <div className="flex items-start justify-center gap-5 w-full max-w-[950px] z-[1]">
         {statCards.map((card, index) => (
           <Card
             key={`stat-card-${index}`}

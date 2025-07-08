@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -8,11 +8,15 @@ import {
 import { Badge } from "./ui/badge";
 import think from "../pics/thinking elion.png";
 import bgq from "../pics/BGQuestions.png";
+import star from "../pics/star.svg";
+import answered from "../pics/answered.png";
 
 const FAQ = (): JSX.Element => {
+  const [openItem, setOpenItem] = useState<string>('');
+
   const faqItems = [
     {
-      question: "What Progrmas do you design in?",
+      question: "What Progrpas do you design in?",
       answer: "Most requests are designed using Figma, Framer, Adobe Illustrator, and Adobe Photoshop",
     },
     {
@@ -39,13 +43,22 @@ const FAQ = (): JSX.Element => {
 
   return (
     <section className="flex flex-col items-center justify-center p-20 relative bg-habibauiuxframerwebsiteblack">
-      <div className="flex flex-col max-w-[1200px] w-full items-center justify-center gap-16 relative">
+      <div className="flex flex-col w-[1200px] w-full items-center justify-center gap-16 relative">
         <div className="flex flex-col w-full items-center justify-center gap-4 relative">
-          <Badge
-            className="bg-habibauiuxframerwebsitecod-gray-40 text-white rounded-[50px] shadow-[0px_0px_0px_1px_#ffffff1a] backdrop-blur-[5px]"
-            variant="outline"
-          >
+        <Badge className="inline-flex items-center justify-center gap-[5px] pt-[7px] pb-2 px-3 relative bg-habibauiuxframerwebsitecod-gray-80 rounded-md overflow-hidden border border-solid border-[#222222]">
+            <div className="flex flex-col w-[15px] h-[15px] items-start justify-center relative">
+              <div className="relative self-stretch w-full h-[15px]">
+                <img
+                  className="absolute w-3.5 h-3.5 top-0 left-px"
+                  alt="star"
+                  src={star}
+                />
+              </div>
+            </div>
+            <span className="[font-family:'Figtree',Helvetica] font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
             Frequently Asked Questions
+
+            </span>
           </Badge>
 
           <div className="inline-flex items-center gap-3.5 relative">
@@ -69,39 +82,55 @@ const FAQ = (): JSX.Element => {
 
         <div className="flex flex-col w-full items-start relative">
           <div className="flex flex-col items-center justify-center relative w-full">
-            <img
-              className="absolute w-full h-[458px] top-0 left-0"
-              alt="bgq"
-              src={bgq}
-            />
-
-            <div className="flex flex-col w-full items-center justify-center gap-4 relative z-10">
-              <Accordion type="single" collapsible className="w-full">
-                {faqItems.map((item, index) => (
-                  <AccordionItem
-                    key={`faq-${index}`}
-                    value={`item-${index}`}
-                    className="bg-habibauiuxframerwebsitewhite-4 rounded-3xl overflow-hidden backdrop-blur-[10px] border border-[#ffffff1a] mb-4 last:mb-0"
-                  >
-                    <AccordionTrigger className="px-5 py-[18px] text-white hover:no-underline">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[16.9px] tracking-[-0.36px] leading-[27px] text-left">
-                        {item.question}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-5 pb-4 text-habibauiuxframerwebsitewhite-70">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <div className="relative w-full max-w-[1200px] mx-auto overflow-hidden rounded-2xl">
+              <img
+                className="absolute w-full h-full top-0 object-cover opacity-20 pointer-events-none"
+                alt="bgq"
+                src={bgq}
+                style={{ maskImage: 'alpha' }}
+              />
+              <div className="relative z-10 w-full">
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full min-w-[1200px]"
+                  value={openItem}
+                  onValueChange={setOpenItem}
+                >
+                  {faqItems.map((item, index) => (
+                    <AccordionItem
+                      key={`faq-${index}`}
+                      value={`item-${index}`}
+                      className="bg-habibauiuxframerwebsitewhite-4 rounded-3xl overflow-hidden backdrop-blur-[10px] border border-[#ffffff1a] mb-4 last:mb-0"
+                    >
+                      <AccordionTrigger className="px-5 py-[18px] text-white hover:no-underline">
+                        <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[16.9px] tracking-[-0.36px] leading-[27px] text-left">
+                          {item.question}
+                        </span>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-5 pb-4 text-habibauiuxframerwebsitewhite-70">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
             </div>
           </div>
 
-          <img
-            className="absolute w-28 h-28 top-[-105px] right-0 object-cover"
-            alt="think"
-            src={think}
-          />
+          {openItem === '' ? (
+            <img
+              className="absolute w-28 h-28 top-[-105px] right-0 object-cover"
+              alt="think"
+              src={think}
+            />
+          ) : (
+            <img
+              className="absolute w-28 h-28 top-[-105px] right-105 object-cover"
+              alt="answered"
+              src={answered}
+            />
+          )}
         </div>
       </div>
     </section>

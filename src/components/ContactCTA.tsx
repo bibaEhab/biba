@@ -247,8 +247,8 @@ const ContactCTA = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center p-20 relative bg-habibauiuxframerwebsiteblack">
-      <Card className="flex flex-col max-w-[1200px] items-start justify-center gap-[23px] pt-[99px] pb-[100px] px-[100px] relative w-full rounded-3xl overflow-hidden shadow-[inset_0px_0px_28px_2px_#ffffff33,0px_0px_2px_14px_#0d173333] backdrop-blur-[2.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2.5px)_brightness(100%)] border-[#292929]">
+    <section className="flex flex-col items-center justify-center p-[80px] relative bg-habibauiuxframerwebsiteblack">
+      <Card className="flex flex-col max-w-[1200px] items-start justify-center gap-[23px] pt-[99px] pb-[80px] px-[80px] relative w-full rounded-3xl overflow-hidden shadow-[inset_0px_0px_28px_2px_#ffffff33,0px_0px_2px_14px_#0d173333] backdrop-blur-[2.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2.5px)_brightness(100%)] border-[#292929]">
         <div className="absolute w-full h-[541px] top-0 left-0 bg-[linear-gradient(0deg,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.65)_100%),url(..//img---galaxy-background.png)_50%_50%_/_cover]">
           {stars.map((star, index) => (
             <div
@@ -258,31 +258,28 @@ const ContactCTA = (): JSX.Element => {
           ))}
         </div>
 
-        <CardContent className="flex flex-col items-start justify-center z-10 p-0 w-full">
-          <div className="flex flex-col w-full items-start pt-0 pb-[0.59px] px-0 relative">
-            <h2 className="relative self-stretch mt-[-1.00px] font-habibauiux-framer-website-inter-bold font-[number:var(--habibauiux-framer-website-inter-bold-font-weight)] text-white text-[length:var(--habibauiux-framer-website-inter-bold-font-size)] tracking-[var(--habibauiux-framer-website-inter-bold-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-bold-line-height)] [font-style:var(--habibauiux-framer-website-inter-bold-font-style)]">
+        <CardContent className="flex flex-row items-center justify-between z-10 p-0 w-full gap-x-10">
+          {/* Text Column */}
+          <div className="flex flex-col items-start">
+            <h2 className="max-w-[700px] w-full font-habibauiux-framer-website-inter-bold font-[number:var(--habibauiux-framer-website-inter-bold-font-weight)] text-white text-[length:52px] tracking-[var(--habibauiux-framer-website-inter-bold-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-bold-line-height)] [font-style:var(--habibauiux-framer-website-inter-bold-font-style)]">
               Ready to bring your dream project to life?
             </h2>
-          </div>
-
-          <div className="flex flex-col w-full items-start pt-0 pb-[0.8px] px-0 relative mt-6">
-            <p className="relative self-stretch mt-[-1.00px] font-habibauiux-framer-website-inter-regular font-[number:var(--habibauiux-framer-website-inter-regular-font-weight)] text-white text-[length:var(--habibauiux-framer-website-inter-regular-font-size)] tracking-[var(--habibauiux-framer-website-inter-regular-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-regular-line-height)] [font-style:var(--habibauiux-framer-website-inter-regular-font-style)]">
+            <p className="max-w-[600px] w-full mt-6 font-habibauiux-framer-website-inter-regular font-[number:var(--habibauiux-framer-website-inter-regular-font-weight)] text-white text-[length:var(--habibauiux-framer-website-inter-regular-font-size)] tracking-[var(--habibauiux-framer-website-inter-regular-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-regular-line-height)] [font-style:var(--habibauiux-framer-website-inter-regular-font-style)]">
               Let&apos;s transform your ideas into stunning reality. Contact me
               today, and let&apos;s build something remarkable together
             </p>
+            <Button className="bg-habibauiuxframerwebsitepurple-heart w-[280px] h-[68px] px-12 py-[22px] mt-6 rounded-2xl shadow-[0px_0px_0px_1px_#4930eb1f,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000000d] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+              <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
+                Let&#39;s Talk
+              </span>
+            </Button>
           </div>
-
+          {/* Image Column */}
           <img
-            className="absolute w-[380px] h-[380px] top-[41px] right-[65px] object-cover"
+            className="w-[380px] h-[380px] object-cover"
             alt="dream"
             src={dream}
           />
-
-          <Button className="bg-habibauiuxframerwebsitepurple-heart w-[280px] px-12 py-[22px] mt-6 rounded-2xl shadow-[0px_0px_0px_1px_#4930eb1f,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000000d] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
-            <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
-              Let&#39;s Talk
-            </span>
-          </Button>
         </CardContent>
       </Card>
     </section>

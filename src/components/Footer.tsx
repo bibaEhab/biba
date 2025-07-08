@@ -1,29 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "./ui/card";
-import { Separator } from "./ui/separator";
 import linkedinSvg from '../pics/linkedin.svg';
 import behanceSvg from '../pics/behance.svg';
 
 
 const Footer = (): JSX.Element => {
+  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null);
   const socialIcons = [
     {
       alt: "linkedin",
       src: linkedinSvg,
-      className: "relative w-5 h-[18.89px]",
+      className: "relative w-24 h-24",
+      url: "https://www.linkedin.com/in/habiba-ehab-ux-designer/",
     },
     {
       alt: "behance",
       src: behanceSvg,
-      className: "relative w-[23.73px] h-[15px]",
+      className: "relative w-24 h-24",
+      url: "https://www.behance.net/he45",
     },
   ];
 
   return (
-    <Card className="relative flex items-center justify-between px-10 py-3 w-full max-w-[1200px] h-16 rounded-[50px] bg-habibauiuxframerwebsitewhite-40 backdrop-blur-[2.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(2.5px)_brightness(100%)]">
+    <Card className="border-0 relative flex items-center justify-between px-10 py-3 w-full max-w-[1200px] h-16 rounded-[50px] backdrop-blur-[9px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(9px)_brightness(100%)] rounded-[50px] h-16">
       <CardContent className="p-0 flex items-center justify-between w-full">
         <div className="flex flex-col items-start">
-          <p className="font-habibauiux-framer-website-inter-medium font-[number:var(--habibauiux-framer-website-inter-medium-font-weight)] text-habibauiuxframerwebsiteblack text-[length:var(--habibauiux-framer-website-inter-medium-font-size)] tracking-[var(--habibauiux-framer-website-inter-medium-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-medium-line-height)] whitespace-nowrap [font-style:var(--habibauiux-framer-website-inter-medium-font-style)]">
+          <p className="font-habibauiux-framer-website-inter-medium font-[number:var(--habibauiux-framer-website-inter-medium-font-weight)] text-[#CCCCCC] text-[length:var(--habibauiux-framer-website-inter-medium-font-size)] tracking-[var(--habibauiux-framer-website-inter-medium-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-medium-line-height)] whitespace-nowrap [font-style:var(--habibauiux-framer-website-inter-medium-font-style)]">
             Habiba© 2025.All Rights Reserved
           </p>
         </div>
@@ -31,43 +33,52 @@ const Footer = (): JSX.Element => {
         <div className="flex items-center gap-5">
           <div className="flex flex-col items-start">
             <div className="relative w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-normal text-habibauiuxframerwebsiteblack text-base tracking-[0] leading-4 whitespace-nowrap">
-              <span className="font-[number:var(--habibauiux-framer-website-inter-medium-font-weight)] text-black font-habibauiux-framer-website-inter-medium [font-style:var(--habibauiux-framer-website-inter-medium-font-style)] tracking-[var(--habibauiux-framer-website-inter-medium-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-medium-line-height)] text-[length:var(--habibauiux-framer-website-inter-medium-font-size)]">
+              <span className="font-[number:var(--habibauiux-framer-website-inter-medium-font-weight)] text-[#CCCCCC] font-habibauiux-framer-website-inter-medium [font-style:var(--habibauiux-framer-website-inter-medium-font-style)] tracking-[var(--habibauiux-framer-website-inter-medium-letter-spacing)] leading-[var(--habibauiux-framer-website-inter-medium-line-height)] text-[length:var(--habibauiux-framer-website-inter-medium-font-size)]">
                 Designed by{" "}
               </span>
-              <span className="font-bold text-black">Habiba Ehab</span>
+              <span className="font-bold text-[#CCCCCC]">Habiba Ehab</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5 p-0.5">
+          <div className="flex items-center gap-4">
             {socialIcons.slice(0, 2).map((icon, index) => (
               <div key={`social-icon-${index}`} className="relative w-6 h-6">
-                <div
-                  className={
-                    index === 0
-                      ? "flex flex-col w-5 h-[19px] items-start relative top-px left-0.5"
-                      : "flex flex-col w-6 h-[15px] items-start relative top-[5px]"
-                  }
-                >
+                <a href={icon.url} target="_blank" rel="noopener noreferrer">
                   <div
                     className={
-                      index === 0
-                        ? "w-5 h-[19px] pt-0 pb-[0.11px] px-0 flex flex-col items-start relative"
-                        : "w-6 h-[15px] pl-0 pr-[0.27px] py-0 flex flex-col items-start relative"
+                      (index === 0
+                        ? "flex flex-col  items-start relative top-px"
+                        : "flex flex-col  items-start relative top-px")
                     }
                   >
-                    <img
-                      className={icon.className}
-                      alt={icon.alt}
-                      src={icon.src}
-                    />
+                    <div
+                      className={
+                        (index === 0
+                          ? "w-6 h-[19px] pt-0 px-0 flex flex-col items-start relative"
+                          : "w-6 h-[15px] pl-0 py-0 flex flex-col items-start relative")
+                      }
+                    >
+                      <img
+                        className={
+                          icon.className +
+                          " transition duration-200" +
+                          (hoveredIcon === index
+                            ? " filter brightness-0 invert sepia hue-rotate-180"
+                            : "")
+                        }
+                        alt={icon.alt}
+                        src={icon.src}
+                        onMouseEnter={() => setHoveredIcon(index)}
+                        onMouseLeave={() => setHoveredIcon(null)}
+                      />
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>
         </div>
       </CardContent>
-      <Separator className="absolute w-full h-px bottom-0 left-0 bg-habibauiuxframerwebsitewhite-8" />
     </Card>
   );
 };
