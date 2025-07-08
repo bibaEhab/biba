@@ -268,7 +268,10 @@ const ContactCTA = (): JSX.Element => {
               Let&apos;s transform your ideas into stunning reality. Contact me
               today, and let&apos;s build something remarkable together
             </p>
-            <Button className="bg-habibauiuxframerwebsitepurple-heart w-[280px] h-[68px] px-12 py-[22px] mt-6 rounded-2xl shadow-[0px_0px_0px_1px_#4930eb1f,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000000d] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+            <Button
+              className="bg-habibauiuxframerwebsitepurple-heart w-[280px] h-[68px] px-12 py-[22px] mt-6 rounded-2xl shadow-[0px_0px_0px_1px_#4930eb1f,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000000d] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
+              onClick={() => window.location.href = '/contact'}
+            >
               <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                 Let&#39;s Talk
               </span>

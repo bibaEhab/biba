@@ -112,7 +112,10 @@ const Pricing = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Button className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+                <Button
+                  className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
+                  onClick={() => window.location.href = '/contact?plan=custom'}
+                >
                   <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                     Get in touch
                   </span>
@@ -174,7 +177,10 @@ const Pricing = (): JSX.Element => {
               </CardHeader>
 
               <CardContent className="px-0 py-10">
-              <Button className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+              <Button
+                className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
+                onClick={() => window.location.href = '/contact?plan=project-based'}
+              >
                   <span className="font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                     Get Started
                   </span>
@@ -242,7 +248,10 @@ const Pricing = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Button className="w-full h-auto px-12 py-[22px] bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+                <Button
+                  className="w-full h-auto px-12 py-[22px] bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
+                  onClick={() => window.location.href = '/contact?plan=part-time'}
+                >
                   <span className="[font-family:'Inter',Helvetica] font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                     Get Started
                   </span>
@@ -309,7 +318,10 @@ const Pricing = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Button className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]">
+                <Button
+                  className="w-full px-12 py-[22px] h-auto relative bg-habibauiuxframerwebsitecod-gray-50 rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_#ffffff1a,0px_2px_2px_-1px_#0000001a,0px_4px_10px_-2px_#0000001a] backdrop-blur-[5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(5px)_brightness(100%)]"
+                  onClick={() => window.location.href = '/contact?plan=full-time'}
+                >
                   <span className="font-medium text-habibauiuxframerwebsiteathens-gray text-[19.4px] tracking-[-0.42px] leading-6 whitespace-nowrap">
                     Get Started
                   </span>

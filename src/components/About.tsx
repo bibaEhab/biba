@@ -7,30 +7,9 @@ import star from "../pics/star.svg";
 
 const About = (): JSX.Element => {
   const statCards = [
-    {
-      icon: "/group-1.png",
-      title: "+6 Years",
-      iconWidth: "w-5",
-      iconHeight: "h-5",
-      iconTop: "top-0.5",
-      iconLeft: "left-0.5",
-    },
-    {
-      icon: "/group-2.png",
-      title: "150+ Projects",
-      iconWidth: "w-5",
-      iconHeight: "h-[18px]",
-      iconTop: "top-[3px]",
-      iconLeft: "left-0.5",
-    },
-    {
-      icon: "/group-3.png",
-      title: "340+ Templates",
-      iconWidth: "w-5",
-      iconHeight: "h-[18px]",
-      iconTop: "top-[3px]",
-      iconLeft: "left-0.5",
-    },
+    {title: "6+ Years of exp",},
+    { title: "150+ Projects",},
+    {title: "340+ Templates",},
   ];
 
   return (
@@ -92,19 +71,8 @@ const About = (): JSX.Element => {
             className="w-full max-w-[303px] rounded-lg overflow-hidden border border-solid border-[#222222] [background:radial-gradient(50%_50%_at_99%_100%,rgba(129,74,200,0.3)_0%,rgba(13,13,13,0.8)_100%)]"
           >
             <CardContent className="flex items-center gap-[5px] px-[30px] py-5">
-              <div className="inline-flex items-center justify-center p-[5px] rounded overflow-hidden">
-                <div className="flex flex-col w-[25px] h-[25px] items-start justify-center relative">
-                  <div className="h-[25px] relative self-stretch w-full">
-                    <img
-                      className={`absolute ${card.iconWidth} ${card.iconHeight} ${card.iconTop} ${card.iconLeft}`}
-                      alt="Group"
-                      src={card.icon}
-                    />
-                  </div>
-                </div>
-              </div>
               <div className="flex-1">
-                <h3 className="[font-family:'Figtree',Helvetica] font-medium text-white text-[23px] tracking-[-0.46px] leading-[27.6px]">
+                <h3 className="[font-family:'Figtree',Helvetica] text-center font-medium text-white text-[23px] tracking-[-0.46px] leading-[27.6px]">
                   {card.title}
                 </h3>
               </div>

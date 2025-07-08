@@ -16,7 +16,6 @@ const Navbar = ({ hideCallMeButton }: NavbarProps): JSX.Element => {
     { label: "Services", id: "Services" },
     { label: "QAs", id: "FAQ" },
     { label: "Pricing", id: "Pricing" },
-    { label: "Contact", id: "ContactCTA" },
   ];
 
   const handleScroll = (id: string) => {
@@ -45,7 +44,7 @@ const Navbar = ({ hideCallMeButton }: NavbarProps): JSX.Element => {
             {navItems.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <NavigationMenuLink
-                  className="[font-family:'Inter',Helvetica] text-[15px] text-white text-center leading-[30px] tracking-[-0.20px] font-medium hover:text-white/80 transition-colors"
+                  className="[font-family:'Inter',Helvetica] text-[15px] text-white hover:text-habibauiuxframerwebsitepurple-heart text-center leading-[30px] tracking-[-0.20px] font-medium hover:text-white/80 transition-colors"
                   href={`#${item.id}`}
                   onClick={e => {
                     e.preventDefault();
@@ -66,7 +65,7 @@ const Navbar = ({ hideCallMeButton }: NavbarProps): JSX.Element => {
             rel="noopener noreferrer"
             className="bg-black hover:bg-black text-white rounded-[50px] h-10 px-5 shadow-[inset_0px_0px_4px_1px_#adc3ff] border border-[#3d71ff] font-medium text-[16px] leading-[19.2px] flex items-center justify-center"
           >
-            Call Me
+            CONTACT US
           </a>
         )}
       </div>

@@ -1,4 +1,5 @@
-import { MailIcon, PhoneIcon } from "lucide-react";
+import { MailIcon  } from "lucide-react";
+import { UserPlus } from 'lucide-react';
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
@@ -9,7 +10,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import call from "../pics/CALL.png";
 import star from "../pics/star.svg";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 type ContactFormProps = {
   hideCallMeButton?: boolean;
@@ -21,44 +22,26 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
     {
       icon: <MailIcon className="w-6 h-6 text-white" />,
       title: "Email",
-      value: "Habibauiux@gmail.com",
+      value: (
+        <a
+          href="mailto:Habibauiux@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white font-bold hover:text-habibauiuxframerwebsitepurple-heart transition-colors duration-200"
+        >
+          Habibauiux@gmail.com
+        </a>
+      ),
     },
     {
-      icon: <PhoneIcon className="w-6 h-6 text-white" />,
-      title: "Phone",
-      value: "002012345678",
-    },
-  ];
-
-  // Form fields data
-  const formFields = [
-    {
-      id: "firstName",
-      label: "First Name",
-      placeholder: "Habiba",
-      required: true,
-      type: "text",
-    },
-    {
-      id: "lastName",
-      label: "Last Name",
-      placeholder: "Ehab",
-      required: true,
-      type: "text",
-    },
-    {
-      id: "phoneNumber",
-      label: "Phone Number",
-      placeholder: "002123456789",
-      required: true,
-      type: "tel",
-    },
-    {
-      id: "email",
-      label: "Email",
-      placeholder: "Habiba@gmail.com",
-      required: true,
-      type: "email",
+      icon: <UserPlus className="w-6 h-6 text-white" />,
+      title: "Social Media",
+      value: (
+        <span className="flex gap-3">
+          <a href="https://www.linkedin.com/in/habiba-ehab-ux-designer/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-habibauiuxframerwebsitepurple-heart transition-colors duration-200 mr-2">LinkedIn</a>
+          <a href="https://www.behance.net/he45" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-habibauiuxframerwebsitepurple-heart transition-colors duration-200">Behance</a>
+        </span>
+      ),
     },
   ];
 
@@ -67,7 +50,18 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
     lastName: "",
     phoneNumber: "",
     email: "",
+    plan: "",
   });
+
+  const [plan, setPlan] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const planParam = params.get("plan");
+    if (planParam) {
+      setPlan(planParam);
+    }
+  }, []);
 
   const validate = (values: any) => {
     const newErrors: any = {};
@@ -76,6 +70,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
     if (!values.phoneNumber) newErrors.phoneNumber = "Phone number is required.";
     if (!values.email) newErrors.email = "Email is required.";
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email)) newErrors.email = "Invalid email format.";
+    if (!values.plan) newErrors.plan = "Please select a plan.";
     return newErrors;
   };
 
@@ -89,6 +84,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
       lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
       phoneNumber: (form.elements.namedItem("phoneNumber") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      plan: plan,
     };
     const newErrors = validate(values);
     setErrors(newErrors);
@@ -97,6 +93,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
     }
 
     const data = new FormData(form);
+    data.set("plan", plan); // ensure correct value is sent
 
     const response = await fetch("https://formspree.io/f/mdkzrzpo", {
       method: "POST",
@@ -109,6 +106,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
     if (response.ok) {
       setStatus("SUCCESS");
       form.reset();
+      setPlan("");
     } else {
       setStatus("ERROR");
     }
@@ -132,7 +130,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
               </div>
             </div>
             <span className="[font-family:'Figtree',Helvetica] font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
-              CONTACT ME
+              CONTACT US
             </span>
           </Badge>
           </div>
@@ -206,7 +204,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
                         id="firstName"
                         name="firstName"
                         type="text"
-                        placeholder="Habiba"
+                        placeholder="first name"
                         required
                         className="h-12 bg-[#0c0c0c] text-[#b9b9b9] border-neutral-700 font-normal text-sm"
                       />
@@ -220,7 +218,7 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
                         id="lastName"
                         name="lastName"
                         type="text"
-                        placeholder="Ehab"
+                        placeholder="last name"
                         required
                         className="h-12 bg-[#0c0c0c] text-[#b9b9b9] border-neutral-700 font-normal text-sm"
                       />
@@ -259,6 +257,37 @@ const ContactForm = ({ hideCallMeButton }: ContactFormProps): JSX.Element => {
                       />
                       {errors.email && <span className="text-red-500 text-xs">{errors.email}</span>}
                     </div>
+                  </div>
+
+                  {/* Plan dropdown */}
+                  <div className="flex flex-col items-start gap-2 w-full relative">
+                    <label htmlFor="plan" className="flex items-end gap-0.5 text-white text-sm font-text-sm-semibold">
+                      Choose a plan <span className="text-[#b42318]">*</span>
+                    </label>
+                    <select
+                      id="plan"
+                      name="plan"
+                      required
+                      className="h-12 bg-[#0c0c0c] text-[#b9b9b9] border border-solid border-neutral-700 p-2 font-normal text-sm rounded w-full appearance-none pr-10"
+                      value={plan}
+                      onChange={e => setPlan(e.target.value)}
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml,%3Csvg fill='none' stroke='%23b9b9b9' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\")",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "right 0.75rem center",
+                        backgroundSize: "1.5em 1.5em",
+                      }}
+                    >
+                      <option value="" disabled>
+                        -- Select a plan --
+                      </option>
+                      <option value="custom">Custom</option>
+                      <option value="part-time">Part-time</option>
+                      <option value="project-based">Project-based</option>
+                      <option value="full-time">Full-time</option>
+                    </select>
+                    {errors.plan && <span className="text-red-500 text-xs">{errors.plan}</span>}
                   </div>
 
                   {/* Message textarea */}
