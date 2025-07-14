@@ -35,11 +35,11 @@ export default function HomePage() {
         <section id="Services">
         <Services />
         </section>
-        <section id="FAQ">
-        <FAQ />
-        </section>
         <section id="Pricing">
         <Pricing />
+        </section>
+        <section id="FAQ">
+        <FAQ />
         </section>
         <section id="ContactCTA">
         <ContactCTA />

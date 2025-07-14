@@ -9,7 +9,7 @@ import star from "../pics/star.svg";
 
 const Pricing = (): JSX.Element => {
   const customFeatures = [
-    { text: "4 Hours / Day", icon: "/group-11.png" },
+    { text: "1 Hour Call", icon: "/group-11.png" },
     { text: "Includes the unlimited plan", icon: "/group-12.png" },
     { text: "Remote", icon: "/group-13.png" },
   ];
@@ -30,6 +30,12 @@ const Pricing = (): JSX.Element => {
 
   return (
     <section className="flex flex-col w-fit items-center justify-center p-20 relative bg-habibauiuxframerwebsiteblack">
+      
+      <img
+          className="absolute w-28 h-28 top-[230px] left-[625px] object-cover"
+          alt="price"
+          src={price}
+        />
       <div className="flex flex-col max-w-[1200px] w-fit items-center justify-center gap-[72px] relative">
         <section className="flex flex-col items-center justify-center gap-4 w-full max-w-[1200px] mx-auto">
           <div className="flex flex-col items-start">
@@ -66,13 +72,6 @@ const Pricing = (): JSX.Element => {
             </p>
           </div>
         </section>
-
-        <img
-          className="absolute w-28 h-28 top-[159px] left-[546px] object-cover"
-          alt="price"
-          src={price}
-        />
-
         <div className="flex flex-row items-center justify-center gap-[24px] relative w-fit">
           <div className="flex flex-wrap items-center justify-end gap-[24px] relative w-fit">
             {/* Custom Plan */}

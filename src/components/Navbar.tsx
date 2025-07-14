@@ -14,8 +14,9 @@ const Navbar = ({ hideCallMeButton }: NavbarProps): JSX.Element => {
     { label: "Home", id: "hero" },
     { label: "About", id: "about" },
     { label: "Services", id: "Services" },
-    { label: "QAs", id: "FAQ" },
     { label: "Pricing", id: "Pricing" },
+    { label: "QAs", id: "FAQ" },
+
   ];
 
   const handleScroll = (id: string) => {
